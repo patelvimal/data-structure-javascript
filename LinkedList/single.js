@@ -14,19 +14,53 @@ LinkedList.prototype.insertAtHead = function (value) {
     this.count++;
 };
 
-
 LinkedList.prototype.insertAtTail = function (value) {
     var newNode = new Node(value, null);
-    if(!this.head) {
-        this.head = newNode
+    if (!this.head) {
+        this.head = newNode;
     } else {
         var current = this.head;
-        while(current.next) {
+        while (current.next) {
             current = current.next;
         }
         current.next = newNode;
     }
     this.count++;
+};
+
+LinkedList.prototype.insertAt = function (index, value) {
+    if (index < 0 || index > this.count) return null;
+    var newNode = new Node(value, null);
+    if (index == 0) return this.insertAtHead(value);
+
+    var current = this.head;
+    var prev = null;
+    var count = 0;
+    while (count < index) {
+        prev = current;
+        count++;
+        current = current.next;
+    }
+    newNode.next = current;
+    prev.next = newNode;
+    this.count++;
+};
+
+LinkedList.prototype.reverse = function () {
+   
+    if (!this.head || !this.head.next) {
+        return null;
+    }
+    var current = this.head;
+    var next = null;
+    var prev = null;
+    while (current) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    this.head = prev;
 };
 
 LinkedList.prototype.print = function () {
