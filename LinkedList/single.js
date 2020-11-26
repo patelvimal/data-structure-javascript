@@ -1,3 +1,5 @@
+const { link } = require("fs");
+
 function LinkedList() {
     this.head = null;
     this.count = 0;
@@ -62,6 +64,15 @@ LinkedList.prototype.reverse = function () {
     }
     this.head = prev;
 };
+
+LinkedList.prototype.merge = function(linkedList){
+    var current = this.head;
+    while(current.next) {
+        current = current.next;
+    }
+    current.next = linkedList.head;
+    this.count = this.count + linkedList.count;
+}
 
 LinkedList.prototype.print = function () {
     var output = [];

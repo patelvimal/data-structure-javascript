@@ -87,6 +87,34 @@ describe('#reverse', () => {
     
 })
 
+describe('#merge', () => {
+    test('should merge 2 linkedList', () => {
+        const ll1 = new LinkedList();
+        ll1.insertAtTail(100);
+        ll1.insertAtTail(200);
+        const ll2 = new LinkedList();
+        ll2.insertAtTail(300);
+        ll2.insertAtTail(400);
+        ll1.merge(ll2);
+        const output = ll1.print();
+        const expectedValue = '100 --> 200 --> 300 --> 400';
+        expect(output).toBe(expectedValue);
+        expect(ll1.count).toBe(4);
+    })
+
+    test('should merge 2 linkedList if one of them empty', () => {
+        const ll1 = new LinkedList();
+        ll1.insertAtTail(100);
+        ll1.insertAtTail(200);
+        const ll2 = new LinkedList();
+        ll1.merge(ll2);
+        const output = ll1.print();
+        const expectedValue = '100 --> 200';
+        expect(output).toBe(expectedValue);
+        expect(ll1.count).toBe(2);
+    })
+    
+})
 
 
 describe('#print', () => {
