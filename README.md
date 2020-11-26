@@ -1,2 +1,5 @@
 # data-structure-javascript
-Commo Data structure implemented in Javascript
+Data structure in Javascript
+
+### LinkedList
+

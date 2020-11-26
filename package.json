@@ -1,0 +1,23 @@
+{
+  "name": "data-structure-javascript",
+  "version": "1.0.0",
+  "description": "Data structure implemented in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patelvimal/data-structure-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patelvimal/data-structure-javascript/issues"
+  },
+  "homepage": "https://github.com/patelvimal/data-structure-javascript#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
